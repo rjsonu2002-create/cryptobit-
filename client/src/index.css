@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Crisp, clean financial theme */
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --background: 210 20% 98%; /* Light gray background like standard dashboards */
+  --foreground: 222 47% 11%;
+  
+  --primary: 221 83% 53%; /* Strong blue */
+  --primary-foreground: 210 40% 98%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --positive: 142 76% 36%; /* Green for gains */
+  --negative: 346 84% 61%; /* Red for losses */
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 221 83% 53%;
+  
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  
+  --card: 222 47% 14%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 222 47% 14%;
+  --popover-foreground: 210 40% 98%;
+  
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --positive: 142 76% 36%;
+  --negative: 346 84% 61%;
+
+  --border: 217 33% 22%;
+  --input: 217 33% 22%;
+  --ring: 221 83% 53%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-positive {
+    color: hsl(var(--positive));
+  }
+  
+  .text-negative {
+    color: hsl(var(--negative));
+  }
+
+  .font-mono-numbers {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum"; /* Tabular numbers for alignment */
+  }
+}
